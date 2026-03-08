@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 40 20% 92%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 32 95% 55%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 20 14% 18%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 32 80% 45%;
+    --accent-foreground: 40 20% 92%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 16%;
+    --input: 30 10% 16%;
+    --ring: 32 95% 55%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-script: 'Dancing Script', cursive;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: linear-gradient(135deg, hsl(0 0% 8% / 0.8), hsl(0 0% 5% / 0.9));
+    border: 1px solid hsl(32 95% 55% / 0.15);
+    backdrop-filter: blur(24px);
+  }
+
+  .glow-warm {
+    box-shadow: 0 0 30px hsl(32 95% 55% / 0.15), 0 0 80px hsl(32 95% 55% / 0.05);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px hsl(45 100% 50% / 0.4), 0 0 100px hsl(32 95% 55% / 0.3), 0 0 150px hsl(32 95% 55% / 0.15);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 40px hsl(32 95% 55% / 0.3);
+  }
+
+  .gradient-bg {
+    background: radial-gradient(ellipse at 50% 0%, hsl(32 40% 8%) 0%, hsl(0 0% 4%) 60%);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .line-accent {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(32 95% 55%), transparent);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
